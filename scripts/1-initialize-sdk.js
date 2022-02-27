@@ -11,6 +11,8 @@ if (!process.env.ALCHEMY_API_URL || process.env.ALCHEMY_API_URL == "")
 if (!process.env.WALLET_ADDRESS || process.env.WALLET_ADDRESS == "")
 	console.log("🛑 Wallet Address not found.");
 
+// Here we're initializing 3rd web sdk and are passing the private key of our wallet and provider url
+// It's similar like initializing a connection to database
 const sdk = new ThirdwebSDK(
 	new ethers.Wallet(process.env.PRIVATE_KEY, ethers.getDefaultProvider(process.env.ALCHEMY_API_URL))
 );
@@ -24,3 +26,4 @@ const sdk = new ThirdwebSDK(
 		process.exit(1);
 	}
 })();
+export default sdk;
