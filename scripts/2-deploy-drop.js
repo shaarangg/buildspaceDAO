@@ -3,7 +3,7 @@ import sdk from "./1-initialize-sdk.js";
 import { readFileSync } from "fs";
 
 const app = sdk.getAppModule(process.env.APP_ADDRESS);
-// Initializing our collection and giving it some meta data.
+// Initializing our ERC115 contract and giving it some meta data.
 (async () => {
 	try {
 		const bundleDropModule = await app.deployBundleDropModule({
